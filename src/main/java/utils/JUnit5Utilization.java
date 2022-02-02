@@ -31,32 +31,32 @@ public class JUnit5Utilization {
                 }
                 if (importName.contains("org.testng")) {
                     String[] splitImport = importName.split("\\.");
-                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), "TestNG");
                     fileNames.add(testClass.getClassName());
                 }
                 if (importName.contains("org.hamcrest")) {
                     String[] splitImport = importName.split("\\.");
-                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), "Hamcrest");
                     fileNames.add(testClass.getClassName());
                 }
                 if (importName.contains("org.assertj")) {
                     String[] splitImport = importName.split("\\.");
-                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), "AssertJ");
                     fileNames.add(testClass.getClassName());
                 }
                 if (importName.contains("org.mockito")) {
                     String[] splitImport = importName.split("\\.");
-                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), "Mockito");
                     fileNames.add(testClass.getClassName());
                 }
                 if (importName.contains("cucumber.api")) {
                     String[] splitImport = importName.split("\\.");
-                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), "Cucumber");
                     fileNames.add(testClass.getClassName());
                 }
                 if (importName.contains("net.serenitybdd")) {
                     String[] splitImport = importName.split("\\.");
-                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), "Serenity");
                     fileNames.add(testClass.getClassName());
                 }
             }
