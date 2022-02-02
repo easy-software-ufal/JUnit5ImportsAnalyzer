@@ -5,10 +5,13 @@ import com.github.javaparser.ast.*;
 import projectCrawler.*;
 
 import java.io.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class JUnit5Utilization {
 
     private final ProjectCrawler projectCrawler;
+    private final Set<String> fileNames = new HashSet<>();
 
     public JUnit5Utilization(String projectPath) throws FileNotFoundException {
         OutputWriter.getInstance().setOutputFile(projectPath);
@@ -24,6 +27,37 @@ public class JUnit5Utilization {
                 if (importName.contains("org.junit.jupiter")) {
                     String[] splitImport = importName.split("\\.");
                     OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
+                }
+                if (importName.contains("org.testng")) {
+                    String[] splitImport = importName.split("\\.");
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
+                }
+                if (importName.contains("org.hamcrest")) {
+                    String[] splitImport = importName.split("\\.");
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
+                }
+                if (importName.contains("org.assertj")) {
+                    String[] splitImport = importName.split("\\.");
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
+                }
+                if (importName.contains("org.mockito")) {
+                    String[] splitImport = importName.split("\\.");
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
+                }
+                if (importName.contains("cucumber.api")) {
+                    String[] splitImport = importName.split("\\.");
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
+                }
+                if (importName.contains("net.serenitybdd")) {
+                    String[] splitImport = importName.split("\\.");
+                    OutputWriter.getInstance().write(testClass.getAbsolutePath(), splitImport[splitImport.length - 1]);
+                    fileNames.add(testClass.getClassName());
                 }
             }
         }
